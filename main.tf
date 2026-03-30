@@ -40,7 +40,6 @@ resource "fortios_vpnipsec_phase1interface" "phase1" {
   name      = each.value.name
   interface = each.value.interface
   proposal  = each.value.proposal
-  remote_gw = each.value.remote_gw
   vdomparam = each.value.vdom
 
   acct_verify               = try(each.value.acct_verify, null)
@@ -125,6 +124,7 @@ resource "fortios_vpnipsec_phase1interface" "phase1" {
   psksecret                 = try(each.value.psksecret, null)
   reauth                    = try(each.value.reauth, null)
   rekey                     = try(each.value.rekey, null)
+  remote_gw                 = try(each.value.remote_gw, null)
   remote_gw6                = try(each.value.remote_gw6, null)
   rsa_signature_format      = try(each.value.rsa_signature_format, null)
   save_password             = try(each.value.save_password, null)
